@@ -8,9 +8,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <Sidebar />
 
       {/* Area Konten Utama */}
-      <div className="flex-1 ml-64 flex flex-col">
+      <div className="w-full flex-1 ml-64 flex flex-col">
         <Header />
-        <main className="p-10 pt-2">
+        <main className="p-10 pt-2" suppressHydrationWarning={true}>
           {children}
         </main>
       </div>

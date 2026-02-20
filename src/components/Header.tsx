@@ -19,7 +19,7 @@ export default function Header() {
   };
 
   return (
-    <header className="h-20 flex items-center justify-end px-10 relative bg-transparent">
+    <header className="h-20 w-full flex items-center justify-end px-10 relative bg-transparent">
       <div 
         className="flex items-center gap-3 cursor-pointer p-2 hover:bg-gray-50 rounded-xl transition-all"
         onClick={() => setIsOpen(!isOpen)}
@@ -37,7 +37,7 @@ export default function Header() {
         {/* Profile Image */}
         <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-white">
           <img 
-            src="/images/avatar-muhammad.jpg" 
+            src="/next.svg" 
             alt="Profile" 
             className="w-full h-full object-cover"
           />

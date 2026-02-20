@@ -1,22 +1,18 @@
-import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import User from '@/models/User';
 
 export async function POST(req: Request) {
-  try {
-    const { username, password } = await req.json();
+  const { username, password } = await req.json();
 
-    // Query SQL murni (Pasti jalan di MySQL versi lama)
-    const [rows]: any = await db.execute(
-      'SELECT * FROM user WHERE username = ? AND password = ?',
-      [username, password]
-    );
+  // Sequelize akan mencari ke tabel 'user' yang sudah ada di MySQL
+  const user = await User.findOne({ 
+    where: { 
+      username: username,
+      password: password 
+    } 
+  });
 
-    if (rows.length > 0) {
-      return NextResponse.json({ success: true, user: rows[0] });
-    } else {
-      return NextResponse.json({ success: false, message: 'User tidak ditemukan' }, { status: 401 });
-    }
-  } catch (error) {
-    return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
+  if (user) {
+    return Response.json({ success: true, user });
   }
+  return Response.json({ success: false, message: "User tidak ditemukan atau password salah" }, { status: 401 });
 }

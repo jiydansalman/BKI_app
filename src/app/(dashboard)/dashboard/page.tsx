@@ -77,66 +77,9 @@ export default function PermohonanPDS() {
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans">
-      {/* --- SIDEBAR --- */}
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
-        <div className="p-6 flex items-center gap-2">
-          {/* Logo Placeholder */}
-          <div className="text-teal-600 font-bold text-2xl flex items-center">
-            <span className="text-teal-500">✔</span>ID<span className="text-blue-900">Survey</span> <span className="text-teal-600 ml-1">bki</span>
-          </div>
-        </div>
-
-        <nav className="flex-1 px-4 space-y-2">
-          <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-teal-700 bg-teal-50 rounded-lg">
-            <Home size={20} />
-            Dashboard
-          </a>
-
-          <div>
-            <button 
-              onClick={() => setIsPdsOpen(!isPdsOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-white bg-[#0A8E9A] rounded-lg shadow-sm"
-            >
-              <div className="flex items-center gap-3">
-                <FileText size={20} />
-                PDS
-              </div>
-              {isPdsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </button>
-
-            {/* Dropdown Menu */}
-            {isPdsOpen && (
-              <div className="ml-8 mt-2 space-y-2">
-                <a href="#" className="flex items-center gap-2 px-2 py-2 text-sm font-medium text-gray-800">
-                  <div className="w-2 h-2 rounded-full bg-teal-500"></div>
-                  Permohonan PDS
-                </a>
-                <a href="#" className="flex items-center gap-2 px-2 py-2 text-sm font-medium text-gray-500 hover:text-gray-800">
-                  <div className="w-2 h-2 rounded-full bg-gray-800"></div>
-                  Riwayat PDS
-                </a>
-              </div>
-            )}
-          </div>
-        </nav>
-      </aside>
 
       {/* --- MAIN CONTENT --- */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Top Header */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-end px-8">
-          <div className="flex items-center gap-3 cursor-pointer">
-            <div className="text-right">
-              <p className="text-sm font-bold text-gray-800">Muhammad</p>
-              <p className="text-xs text-gray-500">Surveyor</p>
-            </div>
-            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-               <User className="text-gray-500" />
-            </div>
-            <ChevronDown size={16} className="text-gray-500" />
-          </div>
-        </header>
-
         {/* Content Area */}
         <div className="flex-1 overflow-auto p-8">
           <h1 className="text-4xl font-bold text-[#1F2937] mb-6">Permohonan PDS</h1>

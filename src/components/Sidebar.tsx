@@ -10,29 +10,20 @@ export default function Sidebar() {
   return (
     <aside className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col fixed left-0 top-0 z-20">
       {/* --- Bagian Logo --- */}
-      <div className="p-6 flex items-center gap-2">
+      <div className="p-4 flex items-center gap-2">
         {/* Logo ID Survey */}
         <Image 
-          src="/images/ID Survey.png" 
+          src="/images/Logo Dashboard.png" 
           alt="Logo ID Survey" 
           width={120} 
           height={40} 
-          className="h-8 w-auto object-contain" // Tinggi di-set tetap (h-8), lebar menyesuaikan otomatis
+          className="h-15 w-auto object-contain" // Tinggi di-set tetap (h-8), lebar menyesuaikan otomatis
           priority // Prioritaskan loading logo saat halaman pertama dibuka
-        />
-        {/* Logo BKI */}
-        <Image 
-          src="/images/BKI.png" 
-          alt="Logo BKI" 
-          width={50} 
-          height={40} 
-          className="h-8 w-auto object-contain"
-          priority
         />
       </div>
 
       {/* --- Bagian Menu Navigasi --- */}
-      <nav className="flex-1 px-4 space-y-2 overflow-y-auto mt-2">
+      <nav className="flex-1 px-2  space-y-2 overflow-y-auto mt-2">
         
         {/* Menu Dashboard */}
         <a 
